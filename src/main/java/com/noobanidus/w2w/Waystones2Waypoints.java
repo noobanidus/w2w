@@ -43,5 +43,6 @@ public class Waystones2Waypoints {
 
     @Mod.EventHandler
     public void loadComplete(FMLLoadCompleteEvent event) {
+        CONFIG.save();
     }
 }
