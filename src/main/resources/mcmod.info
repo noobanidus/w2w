@@ -1,7 +1,7 @@
 [
   {
     "modid": "w2w",
-    "name": "WaystonesToWaypoints",
+    "name": "Waystones2Waypoints",
     "description": "Automatically create Xaero's Minimap Waypoints when activating a Waystone.",
     "version": "${version}",
     "credits": "Noobanidus",

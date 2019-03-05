@@ -12,11 +12,11 @@ import org.apache.logging.log4j.Logger;
 import java.io.File;
 
 @Mod.EventBusSubscriber
-@Mod(modid = WaypointsToWaystones.MODID, name = WaypointsToWaystones.MODNAME, version = WaypointsToWaystones.VERSION, dependencies = WaypointsToWaystones.DEPENDS)
+@Mod(modid = Waystones2Waypoints.MODID, name = Waystones2Waypoints.MODNAME, version = Waystones2Waypoints.VERSION, dependencies = Waystones2Waypoints.DEPENDS)
 @SuppressWarnings("WeakerAccess")
-public class WaypointsToWaystones {
+public class Waystones2Waypoints {
     public static final String MODID = "w2w";
-    public static final String MODNAME = "WaypointsToWaystones";
+    public static final String MODNAME = "Waystones2Waypoints";
     public static final String VERSION = "GRADLE:VERSION";
     public static final String DEPENDS = "required-after:waystones;required-after:xaerominimap;";
 
@@ -24,8 +24,10 @@ public class WaypointsToWaystones {
     public final static Logger LOG = LogManager.getLogger(MODID);
     public final static Configuration CONFIG = new Configuration(new File("config", "waystones2waypoints.cfg"), true);
 
-    @Mod.Instance(WaypointsToWaystones.MODID)
-    public static WaypointsToWaystones instance;
+    public static boolean enabled = CONFIG.get("General", "Enable", true, "Set to false to disable the creation of waypoints.").getBoolean();
+
+    @Mod.Instance(Waystones2Waypoints.MODID)
+    public static Waystones2Waypoints instance;
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
