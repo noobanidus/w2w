@@ -5,6 +5,8 @@ import net.blay09.mods.waystones.util.WaystoneActivatedEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import xaero.common.minimap.waypoints.Waypoint;
 import xaero.common.minimap.waypoints.WaypointsManager;
 import xaero.common.settings.ModSettings;
@@ -15,8 +17,8 @@ import java.io.IOException;
 @Mod.EventBusSubscriber(modid = Waystones2Waypoints.MODID)
 public class Handler {
 
-
     @SubscribeEvent
+    @SideOnly(Side.CLIENT)
     public static void onWaystoneActivated(WaystoneActivatedEvent event) {
         if (Waystones2Waypoints.enabled) {
             WaypointsManager wm = XaeroMinimap.instance.getWaypointsManager();
