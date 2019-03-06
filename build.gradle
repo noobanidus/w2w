@@ -51,6 +51,7 @@ repositories {
 
 dependencies {
     deobfCompile 'waystones:Waystones_1.12.2:4.0.67'
+    //deobfCompile 'signpost:signpost:1.12:1.08'
 
     compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.11.1'
     compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.11.1'
