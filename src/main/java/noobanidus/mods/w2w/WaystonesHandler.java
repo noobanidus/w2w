@@ -5,7 +5,9 @@ import net.blay09.mods.waystones.api.WaystoneActivatedEvent;
 
 public class WaystonesHandler {
   public static void onWaystoneActivated(WaystoneActivatedEvent event) {
-    IWaystone waystone = event.getWaystone();
-    WaypointHandler.makeWaypoint(waystone.getPos(), waystone.getName());
+    if (event.getPlayer().world.isRemote()) {
+      IWaystone waystone = event.getWaystone();
+      WaypointHandler.makeWaypoint(waystone.getPos(), waystone.getName());
+    }
   }
 }
