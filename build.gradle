@@ -113,6 +113,7 @@ repositories {
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
-    compile fg.deobf("net.blay09.mods.waystones:Waystones:1.15.2-6.0.2")
+
+    compile fg.deobf("net.blay09.mods.waystones:Waystones:1.16.1-7.0.2")
     compile fg.deobf("xaero.minimap:XaerosMinimap:20.17.0")
 }
