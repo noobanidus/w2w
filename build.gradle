@@ -93,6 +93,10 @@ sourceSets.main.resources {
     srcDir 'src/generated/resources'
 }
 
+configurations {
+    shade
+}
+
 repositories {
     maven {
         url "http://maven.tterrag.com/"
@@ -107,13 +111,29 @@ repositories {
     flatDir {
         dir 'libs'
     }
-
 }
 
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
-
     compile fg.deobf("net.blay09.mods.waystones:Waystones:1.16.1-7.0.2")
     compile fg.deobf("xaero.minimap:XaerosMinimap:20.17.0")
+
+    def noobutil = "noobanidus.libs:noobutil:${minecraft_version}-${noobutil_version}"
+    implementation fg.deobf(noobutil)
+    shade noobutil
 }
+
+shadowJar {
+    configurations = [project.configurations.shade]
+     relocate 'noobanidus.libs.noobutil', 'noobanidus.libs.repack_waystones2waypoints.noobutil'
+    classifier ''
+}
+
+jar.classifier = 'nodep'
+
+reobf {
+    shadowJar {}
+}
+
+build.dependsOn reobfShadowJar
