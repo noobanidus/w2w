@@ -1,6 +1,7 @@
 modLoader="javafml" #mandatory
 loaderVersion="[32,)" #mandatory (26 is current forge version)
 issueTrackerURL="https://github.com/noobanidus/w2w/issues" #optional
+license="https://github.com/noobanidus/w2w/blob/master/LICENSE"
 [[mods]] #mandatory
 modId="w2w" #mandatory
 version="${file.jarVersion}" #mandatory
@@ -19,6 +20,6 @@ Adds waypoints whenever you find Waystones.
 [[dependencies.w2w]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.16.1]"
+    versionRange="[1.16.1,)"
     ordering="NONE"
     side="BOTH"
