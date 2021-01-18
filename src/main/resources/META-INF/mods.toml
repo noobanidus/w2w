@@ -23,3 +23,9 @@ Adds waypoints whenever you find Waystones.
     versionRange="[1.16.1,)"
     ordering="NONE"
     side="BOTH"
+[[dependencies.w2w]]
+    modId="xaerominimap"
+    mandatory=true
+    versionRange="[21.1.0,)"
+    ordering="NONE"
+    side="BOTH"
